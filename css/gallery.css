@@ -1,0 +1,38 @@
+/** Galeria **/
+.gallery{width:640px;margin:10px 0 20px;clear:both;position:relative;}
+
+.gallery img{margin:0!important;}
+.gallery .gallery-display { width:100%;height:400px;position:relative;margin:0 0 10px; text-align: center; }
+.gallery .gallery-display img{height:100%;}
+.gallery .gallery-display .seta{top:40%;}
+.gallery .gallery-display p{position:absolute;left:0;right:0;bottom:0;background:#fff;padding:10px;color:#000;margin:0!important;}
+.gallery .gallery-display p strong{font:italic normal 11px "Trebuchet MS";color:#666;float:right;margin:3px 0 0;}
+.gallery .gallery-display p span.arrow{cursor:pointer;width:50px;height:14px;overflow:hidden;display:block;position:absolute;top:-14px;left:50%;margin:0 0 0 -25px;background:#fff url(../img/sprites.png?cb=20120829) no-repeat -850px -59px;}
+.gallery .gallery-display p,
+.gallery .gallery-display p span.arrow{opacity:0.9;filter:alpha(opacity=90);}
+.gallery .gallery-display p.close{bottom:-15px;}
+.gallery .gallery-display p.close span.arrow{background-position:-850px -34px;}
+
+.gallery .gallery-thumbnails-container { position: relative; width: 100%; height: 74px; overflow: hidden; }
+.gallery .gallery-thumbnails-container ul {height: 100%; width: 100000px;}
+
+.gallery .gallery-thumbnails {overflow:hidden;height:100%;margin:5px 0 0;}
+.gallery .gallery-thumbnails li{width:104px;height:64px;float:left;margin:0;padding:0;overflow:hidden; list-style: none; background: none;}
+.gallery .gallery-thumbnails li a{display:block;width:100px;height:60px;border:2px solid #fff;}
+.gallery .gallery-thumbnails li img{width:100%;height:100%;padding:0;}
+.gallery .gallery-thumbnails li.last{margin:0 !important;}
+.gallery .gallery-thumbnails li a:hover,
+.gallery .gallery-thumbnails li.current a{border:none;margin:0 11px 0 0;}
+.gallery .gallery-thumbnails li a:hover img,
+.gallery .gallery-thumbnails li.current a img{border:2px solid #00a2dc;}
+/*
+.full .gallery .slide{width:980px;height:600px;z-index:100;}
+.gallery .btn-full{display:block;width:25px;height:25px;position:absolute;background:url(../img/btn-fullscreen.png) no-repeat 0 0;z-index:1;top:10px;right:10px;}
+.full .gallery .btn-full{width:122px;height:31px;top:-45px;right:0;background-position:-35px 0;}
+
+.gallery .slider{background:url(../img/sprites.png?cb=20120829) no-repeat -382px -754px;width:100%;height:11px;margin:8px 0 0;}
+.gallery .slider span{background:url(../img/sprites.png?cb=20120829) no-repeat -921px -47px;display:block;width:80px;height:22px;margin:0 0 0 122px;text-align:center;color:#fff;line-height:20px;font-size:11px;cursor:pointer;}
+8*/.gallery #publicidade{position:absolute;top:0;left:0;right:0;bottom:-10px;}
+.gallery #publicidade img{width:100%;height:100%;}
+.gallery #publicidade p{position:absolute;background:#000;bottom:0;left:0;right:0;padding:4px 10px 5px;font-size:10px;color:#fff;}
+.gallery a#fechar{top:0;background-position:-973px -427px;height:28px;}

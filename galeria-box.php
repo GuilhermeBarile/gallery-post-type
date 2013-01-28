@@ -396,7 +396,7 @@ wp_nonce_field( plugin_basename( dirname(__FILE__) ), 'gallery_posttype' );
 
     <?php foreach ($attachments as $attachment): ?>
         <div class="media-item">
-            <?php echo gallery_item($attachment, $thumbnail_id); ?>
+            <?php echo gallery_posttype_admin_item($attachment, $thumbnail_id); ?>
         </div>
         <?php endforeach; ?>
 </div>
