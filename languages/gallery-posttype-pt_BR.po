@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery-post-type 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-28 14:17-0300\n"
+"PO-Revision-Date: 2013-01-28 14:17-0300\n"
+"Last-Translator: Guilherme Barile <guigouz@gmail.com>\n"
+"Language-Team: Guilherme Barile <guigouz@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: /home/guigouz/Work/Prosoma/juventus/wordpress/wp-content/plugins/gallery-post-type\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: galeria-box.php:3
+msgid "Please save the gallery as draft to add images"
+msgstr "Por favor grave este post como rascunho antes de incluir imagens"
+
+#: galeria-box.php:137
+msgid "Image Details"
+msgstr "Detalhes da Imagem"
+
+#: galeria-box.php:138
+msgid "Delete Image"
+msgstr "Excluir imagem"
+
+#: galeria-box.php:139
+msgid "Delete image from disk, or keep it in the library ?"
+msgstr "Excluir imagem do disco, ou manter na biblioteca ?"
+
+#: galeria-box.php:147
+msgid "Uploading..."
+msgstr "Enviando"
+
+#: galeria-box.php:404
+msgid "Add images "
+msgstr "Adicionar imagens"
+
+#: galeria-box.php:405
+msgid "You may also drop files here"
+msgstr "Você também pode arrastar arquivos aqui"
+
+#: gallery-post-type.php:36
+msgid "Embed"
+msgstr "Incorporar"
+
+#: gallery-post-type.php:42
+msgid "Description"
+msgstr "Descrição"
+
+#: gallery-post-type.php:43
+msgid "Images"
+msgstr "Imagens"
+
+#: gallery-post-type.php:61
+msgid "Galleries"
+msgstr "Galerias"
+
+#: gallery-post-type.php:62
+msgid "Gallery"
+msgstr "Galeria"
+
+#: gallery-post-type.php:63
+#: gallery-post-type.php:68
+msgid "New Gallery"
+msgstr "Nova Galeria"
+
+#: gallery-post-type.php:64
+msgid "Search Galleries"
+msgstr "Pesquisar Galerias"
+
+#: gallery-post-type.php:65
+msgid "All"
+msgstr "Todas"
+
+#: gallery-post-type.php:66
+msgid "Edit"
+msgstr "Editar"
+
+#: gallery-post-type.php:67
+msgid "Upload"
+msgstr "Enviar"
+
+#: gallery-post-type.php:160
+msgid "Error removing attachment"
+msgstr "Erro removendo anexo"
+
+#: gallery-post-type.php:173
+msgid "Error deleting attachment"
+msgstr "Erro excluindo anexo"
+
+#: gallery-post-type.php:264
+msgid "<p>Use the code below to embed this gallery on other posts</p>"
+msgstr "<p>Use o código abaixo para incorporar esta galeria em outros posts</p>"
+
+#: gallery-post-type.php:280
+msgid "You do not have permission to upload files."
+msgstr "Você não tem permissão para enviar arquivos"
+
+#~ msgid "Album"
+#~ msgstr "Galeria"
+
+#~ msgid "Search Albums"
+#~ msgstr "Pesquisar galerias"

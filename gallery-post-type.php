@@ -16,7 +16,7 @@ if ( !function_exists( 'add_action' ) ) {
 }
 
 
-add_image_size('gallery-admin_thumbnail', 100, 100, true);
+add_image_size('gallery-admin-thumbnail', 150, 150, true);
 
 // TODO allow themes to set the default image sizes
 add_image_size('gallery-image', 980, 600, false);
@@ -24,7 +24,9 @@ add_image_size('gallery-thumbnail', 100, 60, true);
 
 add_action('init', 'gallery_posttype_init');
 add_action('admin_init', 'gallery_posttype_admin_init');
+add_action('plugins_loaded', 'gallery_posttype_plugin_init');
 add_action('wp_enqueue_scripts', 'gallery_posttype_styles');
+
 
 // Initialization callbacks
 function gallery_posttype_admin_init() {
@@ -57,15 +59,15 @@ function gallery_posttype_init() {
         'has_archive' => 'galleries',
         'labels' => array(
             'name' => __('Galleries', 'gallery-posttype'),
-            'singular_name' => __('Album', 'gallery-posttype'),
+            'singular_name' => __('Gallery', 'gallery-posttype'),
             'add_new' => __('New Gallery', 'gallery-posttype'),
-            'search_items' => __('Search Albums', 'gallery-posttype'),
+            'search_items' => __('Search Galleries', 'gallery-posttype'),
             'all_items' => __('All', 'gallery-posttype'),
             'edit_item' => __('Edit', 'gallery-posttype'),
             'upload_item' => __('Upload', 'gallery-posttype'),
             'add_new_item' => __('New Gallery', 'gallery-posttype')
         ),
-        'taxonomies' => array('post_tag', 'post_category')
+        'taxonomies' => array('post_tag', 'category')
     ));
 
     // Add the gallery to the content
@@ -80,6 +82,10 @@ function gallery_posttype_init() {
     if(isset($_REQUEST['gallery_posttype'])) {
         add_filter('wp_prepare_attachment_for_js', 'gallery_posttype_ajax_attachment');
     }
+}
+
+function gallery_posttype_plugin_init() {
+    load_plugin_textdomain( 'gallery-posttype', false, dirname( plugin_basename( __FILE__ ) ).'/languages' );
 }
 
 function gallery_posttype_styles() {
@@ -126,7 +132,7 @@ function gallery_posttype_admin_item($attachment, $thumbnail = false) {
         </div>"
         //."<a rel='{$attachment->ID}' href='#'>"
         //. wp_get_attachment_url( $attachment->ID)."'>"
-        . wp_get_attachment_image($attachment->ID, 'thumbnail')
+        . wp_get_attachment_image($attachment->ID, 'gallery-admin-thumbnail')
         //. "</a>"
         . "<input type='hidden' name='menu_order[]' value='{$attachment->ID}'/>
     </div>";
@@ -280,7 +286,7 @@ function gallery_posttype_metabox() {
     wp_localize_script('jquery-fileupload', 'asyncupload', array(
             // URL to wp-admin/admin-ajax.php to process the request
             'action' => 'upload-attachment',
-            'post_id' => $_GET['post'],
+            'post_id' => isset($_GET['post']) ? $_GET['post'] : 0,
             // generate a nonce with a unique ID "myajax-post-comment-nonce"
             // so that you can check it later when an AJAX request is sent
             '_ajax_nonce' => wp_create_nonce('media-form')
@@ -306,7 +312,7 @@ function gallery_posttype_save($post_id) {
 
     // verify this came from the our screen and with proper authorization,
     // because save_post can be triggered at other times
-    if ( !wp_verify_nonce( $_POST['gallery_posttype'], plugin_basename( dirname(__FILE__) ) ) )
+    if ( empty($_POST['gallery_posttype']) || !wp_verify_nonce( $_POST['gallery_posttype'], plugin_basename( dirname(__FILE__) ) ) )
         return;
 
     // Check permissions
