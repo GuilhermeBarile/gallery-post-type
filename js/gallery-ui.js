@@ -2,7 +2,6 @@
 jQuery(function ($) {
     "use strict";
 
-    //
     $('.gallery .gallery-thumbnails a').on('click', function () {
         var $this = $(this),
             $gallery = $(this).parents('.gallery'),
@@ -39,36 +38,26 @@ jQuery(function ($) {
             }
         }
 
-        $thumbnails.animate({marginLeft: -1 * index * $me.outerWidth() }); //.css('margin-left', pos * -110);
-
-
-        if (!$('#gallery-meta').hasClass('close')) {
-            $('#gallery-meta').html(
-                get_descricao_foto() +
-                    '<span class="arrow"></span>');
-        }
+        $thumbnails.stop().animate({marginLeft: -1 * index * $me.outerWidth() }); //.css('margin-left', pos * -110);
 
         if ($me.next('li').length) {
-            $gallery.find('.gallery-next').show();
+            $gallery.find('.gallery-nav.next').show();
         }
         else {
-            $gallery.find('.gallery-next').hide();
+            $gallery.find('.gallery-nav.next').hide();
         }
 
         if ($me.prev('li').length) {
-            $gallery.find('.gallery-prev').show();
+            $gallery.find('.gallery-nav.prev').show();
         }
         else {
-            $gallery.find('.gallery-prev').hide();
+            $gallery.find('.gallery-nav.prev').hide();
         }
-
-        //$('#slider').slider('option', 'value', $me.index());
-
 
         var x = parseInt(window.location.hash.substr(1), 10);
 
         if (x !== $me.index()) {
-            // TODO emit change event
+            $gallery.trigger('nav', $me.index());
             window.location.href = '#' + $me.index();
         }
     });
@@ -77,22 +66,22 @@ jQuery(function ($) {
     $(document).on('keydown', function (e) {
         switch (e.keyCode) {
             case 39:
-                $('.gallery .gallery-next').click();
+                $('.gallery .gallery-nav.next').click();
                 break;
             case 37:
-                $('.gallery .gallery-prev').click();
+                $('.gallery .gallery-nav.prev').click();
                 break;
         }
     });
 
-    $('.gallery .gallery-next').on('click', function () {
+    $('.gallery .gallery-nav.next').on('click', function () {
         var $thumbnails = $(this).parents('.gallery').find('.gallery-thumbnails');
         if (!$thumbnails.find('.current').next('li').find('a').click().length) {
             $thumbnails.find('li:first').find('a').click();
         }
     });
 
-    $('.gallery .gallery-prev').on('click', function () {
+    $('.gallery .gallery-nav.prev').on('click', function () {
         var $thumbnails = $(this).parents('.gallery').find('.gallery-thumbnails');
 
         if (!$thumbnails.find('.current').prev('li').find('a').click().length) {

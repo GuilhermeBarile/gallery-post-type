@@ -215,14 +215,9 @@ function gallery_posttype_embed($post_id = null) {
 
         $src = wp_get_attachment_image_src($attachments[0]->ID, 'gallery-image');
         $ret .= '<div class="gallery-display">
-        <img class="gallery-image" src="' . $src[0] .'" title="'.esc_attr($attachments[0]->post_title).'"/>
-        <p id="gallery-meta" class="">
-            '.(empty($attachments[0]->post_excerpt) ? $attachments[0]->post_content : $attachments[0]->post_excerpt).'
-            <strong>'.$attachments[0]->post_title.'</strong>
-                <span class="arrow"></span>
-            </p>
-            <span class="gallery-prev" class="seta ant">&lt;</span>
-            <span class="gallery-next" class="seta prox">&gt;</span>
+            <div class="gallery-nav prev">&nbsp;</div>
+            <div class="gallery-nav next">&nbsp;</div>
+            <img class="gallery-image" src="' . $src[0] .'" title="'.esc_attr($attachments[0]->post_title).'"/>
         </div>';
 
         $ret .= '<div class="gallery-thumbnails-container">
