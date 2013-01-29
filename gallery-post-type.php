@@ -19,7 +19,7 @@ if ( !function_exists( 'add_action' ) ) {
 add_image_size('gallery-admin-thumbnail', 150, 150, true);
 
 // TODO allow themes to set the default image sizes
-add_image_size('gallery-image', 980, 600, false);
+add_image_size('gallery-image', 640, 424, false);
 add_image_size('gallery-thumbnail', 100, 60, true);
 
 add_action('init', 'gallery_posttype_init');
