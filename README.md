@@ -1,20 +1,31 @@
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="name" 96.jpg
+Wordpress Gallery Post Type
+---------------------------
 
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="post_id" 0
+Implements a "gallery" post type, ajax/drag and drop admin interface and frontend navigator.
+This plugin reuses internal Wordpress data structures and the media library.
 
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="_wpnonce" 22e92e0bb6
+Installation
+============
 
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="type"
+Just uncompress the plugin distribution under wp-content/plugins,
 
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="tab"
+# TODO
 
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="short" 1
+* Plugin options page
+	* Gallery rewrite url
+	* Gallery archive rewrite url
+	* Gallery image sizes
+		* Thumbnail
+		* Default image size
 
------------------------------1456106445199727271194528067
-Content-Disposition: form-data; name="async-upload"; filename="96.jpg" Content-Type: image/jpeg
+* Fullscreen support
+	* Include the path to the original image via data attributes
+	* CSS for the .gallery.fullscreen element
+
+* UI Images
+	* Prev/Next arrows
+	* Fullscreen button
+
+* Better documentation (with screenshots) - how do someone publishes a plugin on wordpress.org ?
+
+* Bundle the nextgen gallery importer
